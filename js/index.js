@@ -8,4 +8,37 @@ $(document).ready(function () {
       $("#form2").removeClass("active");
       $("#form3").addClass("active");
     });
+
+    $(".input-file").on("click", function () {
+      $("#input-type-file").trigger("click");
+    });
+    $("#input-type-file").on("change", function () {
+      var file = $(this)[0].files[0];
+      var fileName = file.name;
+      $(".input-file").val(fileName);
+    });
+    $(".btn-submit").on("click", function (e) {
+      e.preventDefault();
+      var file = $("#input-type-file")[0].files[0];
+      var formData = new FormData();
+      formData.append('file', file);
+      $.ajax({
+        url: "uploadFile.php",
+        method: "POST",
+        dataType: "json",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            // Handle success response
+            console.log(response);
+        },
+        error: function(xhr, status, error) {
+            // Handle error   
+
+            console.error(error);   
+
+        }
+      });
+    });
   });

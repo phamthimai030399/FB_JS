@@ -32,11 +32,15 @@ $(document).ready(function () {
         success: function(response) {
             // Handle success response
             console.log(response);
+            $(".input-file").val("");
+            alert('File uploaded successfully');
+
         },
         error: function(xhr, status, error) {
             // Handle error   
 
-            console.error(error);   
+            console.error(error); 
+            alert('File uploaded failed');
 
         }
       });

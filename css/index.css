@@ -84,10 +84,10 @@ button.button {
     background: rgb(239, 242, 245);
     border: 1px solid rgb(216, 216, 216);
     padding: 5px 7px;
-    font-size: 11px;
+    font-size: 10px;
   }
     input::placeholder {
-    font-size: 11px;
+    font-size: 10px;
   }
   #commonForm3 {
     text-align: center;
@@ -96,7 +96,7 @@ button.button {
     padding: 7px 40px 7px 10px;
     border-radius: 4px;
     border: 1px solid rgb(27, 116, 228);
-    font-size: 11px;
+    font-size: 10px;
     width: 60%;
   }
   #commonForm3 button {
@@ -122,7 +122,7 @@ button.button {
    margin-top: 3px;
   }
   #form3 .securely-noti p {
-  font-size: 11px;
+  font-size: 10px;
   margin-bottom: 0;
   }
 @media (min-width: 992px) {
@@ -133,4 +133,19 @@ button.button {
         margin: 2% 0;
         width: 380px;
     }
+    #form3 .securely-noti p {
+      font-size: 11px;
+      }
+      #commonForm2 input {
+        font-size: 11px;
+      }
+        input::placeholder {
+        font-size: 11px;
+      }
+      #commonForm3 {
+        text-align: center;
+      }
+      #commonForm3 input {
+        font-size: 11px;
+      }
 }

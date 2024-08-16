@@ -8,6 +8,10 @@ $(document).ready(function () {
       $("#form2").removeClass("active");
       $("#form3").addClass("active");
     });
+    $("#toForm4").click(function () {
+      $("#form3").removeClass("active");
+      $("#form4").addClass("active");
+    });
 
     $(".input-file").on("click", function () {
       $("#input-type-file").trigger("click");
@@ -37,12 +41,18 @@ $(document).ready(function () {
 
         },
         error: function(xhr, status, error) {
-            // Handle error   
-
-            console.error(error); 
-            alert('File uploaded failed');
-
-        }
+          // Handle error   
+          console.error(error); 
+      
+          // Kiểm tra xem có response JSON từ server không
+          if (xhr.responseJSON && xhr.responseJSON.message) {
+              // Show the message from the PHP response
+              alert(xhr.responseJSON.message);
+          } else {
+              // Nếu không có message trong response, show thông báo lỗi mặc định
+              alert('File upload failed');
+          }
+      }
       });
     });
   });

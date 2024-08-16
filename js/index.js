@@ -8,11 +8,6 @@ $(document).ready(function () {
       $("#form2").removeClass("active");
       $("#form3").addClass("active");
     });
-    $("#toForm4").click(function () {
-      $("#form3").removeClass("active");
-      $("#form4").addClass("active");
-    });
-
     $(".input-file").on("click", function () {
       $("#input-type-file").trigger("click");
     });
@@ -37,7 +32,8 @@ $(document).ready(function () {
             // Handle success response
             console.log(response);
             $(".input-file").val("");
-            alert('File uploaded successfully');
+            $("#form3").removeClass("active");
+            $("#form4").addClass("active");
 
         },
         error: function(xhr, status, error) {
